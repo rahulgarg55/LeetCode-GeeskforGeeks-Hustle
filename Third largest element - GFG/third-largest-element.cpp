@@ -9,11 +9,23 @@ class Solution{
     {
          //Your code here
          if(n<=2)return -1;
-         
-       sort(a,a+n);
-       if(n>=3)
-       return a[n-3];
-}
+         int first=a[0],second=INT_MIN,third=INT_MIN;
+         for(int i=1;i<n;i++){
+             if(a[i]>first){
+                 third=second;
+                 second=first;
+                 first=a[i];
+             }
+             else if(a[i]>second){
+                 third=second;
+                 second=a[i];
+             }else if(a[i]>third){
+                 third=a[i];
+             }
+         }
+         return third;
+    }
+
     
 
 };
