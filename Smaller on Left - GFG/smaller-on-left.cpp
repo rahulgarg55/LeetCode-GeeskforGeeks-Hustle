@@ -50,8 +50,8 @@ vector<int> Smallestonleft(int arr[], int n)
       if(it==s.begin()){ //means set is empty(for eg for 2 in 1st sample test case)
       v.push_back(-1); //no element present on left side which is strictly smaller than itself
       }else{
-          it--; //
-          v.push_back(*it);
+          it--; // bcz we need index just next smaller than the element we r processing bcz lowerbound gives greater than just that element so we decremented our pointer in set by 1
+          v.push_back(*it); //will keep pushing the values strictly smaller than the processing value.
   }
   s.insert(arr[i]); // for eg,2 goes to set in 1st test case (when search goes to 3,it searches in set and 2 is present in set)
   }
