@@ -42,8 +42,9 @@ long long int calculate(int a[], int n)
         m[a[i]]++; //to store frequency of each element
     }
     for(auto it:m){
-     int count=it.second;  // frequency of elements.
-     ans+=(count*(count-1))/2; //concept of combnatrics.
+    if(it.second>1)
+        ans+=((it.second)*(it.second-1))/2;
+     
     }
     return ans;
 }
