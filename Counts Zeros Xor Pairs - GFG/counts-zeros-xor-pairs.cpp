@@ -37,13 +37,13 @@ long long int calculate(int a[], int n)
     long long ans=0;
         
         
-        unordered_map<int,int>m;
+        unordered_map<int,int>m; //key,value pair
     for(int i=0;i<n;i++){
-        m[a[i]]++;
+        m[a[i]]++; //to store frequency of each element
     }
     for(auto it:m){
-     int count=it.second;
-     ans+=(count*(count-1))/2;
+     int count=it.second;  // frequency of elements.
+     ans+=(count*(count-1))/2; //concept of combnatrics.
     }
     return ans;
 }
