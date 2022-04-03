@@ -10,13 +10,13 @@ public:
 void rotate90(vector<vector<int> >& matrix){
       int n=matrix.size();
         for(int i=0;i<n;i++){
-            for(int j=i;j<n;j++){
-                swap(matrix[i][j],matrix[j][i]);
+            for(int j=i+1;j<n;j++){
+                swap(matrix[i][j],matrix[j][i]); //fist will find transpose of matrix
             }
         }
         for(int i=0;i<n;i++){
-            int k=n-1;
-            for(int j=0;j<n/2;j++)
+            int k=n-1; //then will reverse each row of matrix and we will rotate it by 90 degree.
+            for(int j=0;j<n/2;j++) //will keep reversing row until we reach to middle element of row.
 {
     swap(matrix[i][j],matrix[i][k]);
     k--;
@@ -26,7 +26,7 @@ void rotate90(vector<vector<int> >& matrix){
 
     void rotate(vector<vector<int> >& matrix) {
      rotate90(matrix);
-     rotate90(matrix);
+     rotate90(matrix); //will call function two times to rotate it by 180 degree
     }
 };
 
