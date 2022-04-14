@@ -10,7 +10,7 @@ class Solution{
 public:
 	
 	int findMaximum(int arr[], int n) {
-	   int l=0,r=n-1,mid;
+	   int l=0,r=n-1,mid;  
 	   while(l<=r){
 	       int mid=l+(r-l)/2;
 	       if(arr[mid]>arr[mid-1] && arr[mid]>arr[mid+1])
