@@ -10,20 +10,17 @@ class Solution{
     string removeConsecutiveCharacter(string S)
     {
         // code here.
-        
-     int n=S.length();
-     if(n==1)return S; //base case
-     string str="";
-     for(int i=0;i<n-1;i++){
-         if(S[i]!=S[i+1]){
-         str+=S[i];
-         }
-         else continue;
-     }
-         
-     
-     str.push_back(S[n-1]);
-     return str;
+        int n =S.length();
+        if(n==1)return S;
+        string str="";
+        for(int i=0;i<n-1;i++){
+            if(S[i]!=S[i+1])
+            str+=S[i];
+        else continue;
+            
+        }
+    str.push_back(S[n-1]);
+    return str;
     }
 };
 
