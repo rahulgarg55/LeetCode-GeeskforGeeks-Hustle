@@ -10,7 +10,7 @@ class Solution {
         // code here
         for(int i=0;i<n;i++){
             if(S[i]>='A' &&S[i]<='Z')
-            S[i]+=('a'-'A');
+          S.at(i)=tolower(S.at(i));
             if(S[i]==' ')
             S[i]='_';
         }
