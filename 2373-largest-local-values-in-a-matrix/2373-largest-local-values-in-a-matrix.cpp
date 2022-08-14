@@ -8,7 +8,7 @@ public:
             for(int j=0;j<n;j++){
                 if(i<n-2 && j<n-2){
                     int mx=INT_MIN;
-                    int k=i+3,l=j+3;
+                   
                     for(int m=i;m<i+3;m++){
                         for(int n=j;n<j+3;n++){
                             mx=max(mx,grid[m][n]);
