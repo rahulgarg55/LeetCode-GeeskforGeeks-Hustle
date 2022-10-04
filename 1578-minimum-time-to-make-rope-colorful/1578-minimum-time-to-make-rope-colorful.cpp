@@ -1,25 +1,19 @@
 class Solution {
 public:
     int minCost(string colors, vector<int>& neededTime) {
+     int mintime=0;
+        for(int i=0;i<colors.size();i++){
+            if(colors[i]==colors[i+1]){
+                if(neededTime[i]<neededTime[i+1]){
+                    mintime+=neededTime[i];
+                }else{
+                    mintime+=neededTime[i+1];
                 
-        // currMaxTime: maximum time of a balloon needed in this group.
-        int totalTime = 0, currMaxTime = 0;
-        
-        // For each balloon in the array:
-        for (int i = 0; i < colors.size(); ++i) {
-            // If this balloon is the first balloon of a new group
-            // set the currMaxTime as 0.
-            if (i > 0 && colors[i] != colors[i - 1]) {
-                currMaxTime = 0;
+                neededTime[i+1]=neededTime[i];
             }
-            
-            // Increment totalTime by the smaller one.
-            // Update currMaxTime as the larger one.
-            totalTime += min(currMaxTime, neededTime[i]);
-            currMaxTime = max(currMaxTime, neededTime[i]);
         }
         
-        // Return totalTime as the minimum removal time.
-        return totalTime;
+        }
+        return mintime;
     }
 };
