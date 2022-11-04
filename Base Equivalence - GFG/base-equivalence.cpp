@@ -9,11 +9,15 @@ class Solution {
   public:
     string baseEquiv(int n, int m){
         // code here
-        for(int i=2;i<=32;i++){
-            int temp=log2(n)/log2(i);
-            if(temp+1==m)return "Yes";
-        }
-        return "No";
+      for(int i=2;i<=32;i++){
+          int num=n,count=0;
+          while(num!=0){
+              num=num/i;
+              count++;
+          }
+          if(count==m)return "Yes";
+      }
+      return "No";
     }
 };
 
