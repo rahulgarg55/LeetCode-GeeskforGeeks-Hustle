@@ -2,7 +2,7 @@ class Solution {
 public:
   void dfs(const vector<vector<int>>& graph,int u,unordered_set<int>&seen){
       for(const int v:graph[u])
-          if(seen.insert(v).second)
+          if(seen.insert(v).second!=0)
               dfs(graph,v,seen);
   }
     int removeStones(vector<vector<int>>& stones) {
@@ -16,7 +16,7 @@ public:
     graph[j].push_back(i);
     }
     for(int i=0;i<stones.size();i++)
-        if(seen.insert(i).second){
+        if(seen.insert(i).second!=0){
             dfs(graph,i,seen);
             ++ans;
         }
