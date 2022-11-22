@@ -5,24 +5,22 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
 	public:
-	int countTriplets(vector<int>a){
+	int countTriplets(vector<int>nums){
 	    // Code here.
-	    int n=a.size();
-	    int ans =0;
-int hash[n];
-for(int i=0;i<n;i++)
-{hash[i]=0;
-    for(int j=i+1;j<n;j++)
-    {if(a[j] > a[i])
-       hash[i]++;
-}}
-for(int i=0;i<n;i++)
-{
-for(int j=i+1;j<n;j++){
-if(a[i]<a[j])
-ans+=hash[j];
-}}
-return ans;
+	int ans=0;
+	for(int i=1;i<nums.size()-1;i++){
+	    int left=0,right=0;
+	    for(int j=i-1;j>=0;j--){
+	        if(nums[j]<nums[i])left++;
+	    }
+	    for(int j=i+1;j<nums.size();j++){
+	        if(nums[i]<nums[j])right++;
+	    
+	    }
+	
+	ans+=(left*right);
+	}
+	return ans;
 	}
 };
 
