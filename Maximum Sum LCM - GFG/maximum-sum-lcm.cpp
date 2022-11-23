@@ -14,7 +14,7 @@ class Solution {
         for(int i=1;i*i<=n;i++){
             if(n%i==0){
                 ans+=i;
-                if(i*i!=n){
+                if(n/i!=i){
                     ans+=n/i;
                 }
             }
