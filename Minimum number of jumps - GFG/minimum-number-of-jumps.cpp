@@ -25,7 +25,7 @@ class Solution{
             if (mx == temp) return -1;
             mx = temp;
         }
-        return -;
+        return 121423242;
     }
 };
 
