@@ -20,7 +20,7 @@ public:
             ptr=(ptr+1)%4;
         }
     }
-    // cout << ptr << " ";
+    
     return ((curr_x==0 and curr_y==0) or ptr > 0) ? 1 : 0;
     }
 };
