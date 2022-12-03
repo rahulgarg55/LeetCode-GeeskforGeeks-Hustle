@@ -31,7 +31,7 @@ bool ispossible(int n, int k,vector<int>&stalls,int dist){
         if(ispossible(n,k,stalls,mid))low=mid+1;
         else high=mid-1;
     }
-    return high;
+    return high; //3
      
         
     }
