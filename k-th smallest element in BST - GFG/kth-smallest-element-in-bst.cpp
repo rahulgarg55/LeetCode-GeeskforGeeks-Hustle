@@ -93,21 +93,15 @@ struct Node {
 
 class Solution {
   public:
-  
     // Return the Kth smallest element in the given BST
-    void inorder(Node* root,int &ans,int &count,int k){
-        if(root==NULL)return;
-        inorder(root->left,ans,count,k);
-        if(count==k){
-        ans=root->data;
-        }
-        count++;
-        
-        inorder(root->right,ans,count,k);
-    }
-    
-    
-    
+     void inorder(Node* root,int& ans,int& count,int k){
+         if(root==NULL)return;
+         inorder(root->left,ans,count,k);
+         if(count==k)
+         ans=root->data;
+         count++;
+         inorder(root->right,ans,count,k);
+     }
     
     int KthSmallestElement(Node *root, int k) {
         // add code here.
@@ -115,7 +109,6 @@ class Solution {
         int count=1;
         inorder(root,ans,count,k);
         return ans;
-        
     }
 };
 
