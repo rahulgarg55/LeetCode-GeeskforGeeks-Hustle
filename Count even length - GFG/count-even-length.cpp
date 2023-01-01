@@ -5,32 +5,20 @@ using namespace std;
 // } Driver Code Ends
 class Solution{
 	public:
-	using ll=long long int;
-	ll mod=1e9+7;
-	ll modpow(ll a,ll b){
-	    ll temp=1%mod;
-	    a%=mod;
-	    while(b){
-	        if(b&1)
-	        temp=(temp*a)%mod;
-	        a=(a*a)%mod;
-	        b>>=1;
-	    }
-	    return temp;
-	}
-	ll modinverse(ll a){
-	return modpow(a,mod-2);
+	int mod=1e9+7;
+	long long int inv(long long int i){
+	    if(i==1)return 1;
+	    return (mod-((mod/i)*inv(mod%i))%mod+mod)%mod;
 	}
 	int compute_value(int n)
 	{
-if(n==1)return 2;
-ll ans=2;
-for(ll i=1;i<n;i++){
-    ans=(ans%mod*((2*i)%mod+1)%mod*2);
-    ll x=modinverse(i+1);
-ans=(ans*x)%mod;
-}
- return ans;   
+	    // Code here
+	    long long int ans=1,ncr=1;
+	    for(int r=1;r<=n;r++){
+	        ncr=(((ncr*(n+1-r))%mod)*inv(r))%mod;
+	        ans+=(ncr*ncr)%mod;
+	    }
+	    return ans%mod;
 	}
 };
 
