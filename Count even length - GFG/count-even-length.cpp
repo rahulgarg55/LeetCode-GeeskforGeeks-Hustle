@@ -6,19 +6,19 @@ using namespace std;
 class Solution{
 	public:
 	int mod=1e9+7;
-	long long int inv(long long int i){
+	long long int inverse(long long int i){
 	    if(i==1)return 1;
-	    return (mod-((mod/i)*inv(mod%i))%mod+mod)%mod;
+	    return (mod-((mod/i)*inverse(mod%i))%mod+mod)%mod;
 	}
 	int compute_value(int n)
 	{
 	    // Code here
-	    long long int ans=1,ncr=1;
+	    long long int count=1,ncr=1;
 	    for(int r=1;r<=n;r++){
-	        ncr=(((ncr*(n+1-r))%mod)*inv(r))%mod;
-	        ans+=(ncr*ncr)%mod;
+	        ncr=(((ncr*(n+1-r))%mod)*inverse(r))%mod;
+	        count+=(ncr*ncr)%mod;
 	    }
-	    return ans%mod;
+	    return count%mod;
 	}
 };
 
