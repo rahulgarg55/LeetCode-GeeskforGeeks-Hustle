@@ -13,34 +13,25 @@ class Solution
 public:
     string longestString(vector<string> &words)
     {
-       /* a ab abc abd
-        a->1
-        ab->1
-        abc->1
-        abd->1 */
-  sort(words.begin(),words.end());
-  unordered_map<string,int>m;
-  for(auto i:words)m[i]++;
-  string ans="";
-  int size=INT_MIN;
- for(auto it:words){
-    string temp="";
-    int count=0;
-    int n=it.size();
-    for(int i=0;i<n;i++){
-        temp+=it[i];
-        if(m[temp]!=0)count++;
-    }
-    if(count==n &&n>size){
-        size=n;
-        ans=it;
-    }
-     }
-     return ans;
- 
-  
-           
-        
+      sort(words.begin(),words.end());
+      unordered_map<string,int>m;
+      for(auto i:words)m[i]++;
+      string ans="";
+      int size=INT_MIN;
+      for(auto it:words){
+          string temp="";
+          int count=0;
+          int n=it.size();
+          for(int i=0;i<n;i++){
+              temp+=it[i];
+              if(m[temp]!=0)count++;
+          }
+          if(count==n and n>size){
+              size=n;
+              ans=it;
+          }
+      }
+      return ans;
     }
 };
 
