@@ -10,26 +10,26 @@ class Solution {
   public:
     vector<long long> nextLargerElement(vector<long long> &arr, int n){
         // Your code here
-        vector<long long>ans; 
-        stack<long long>s; 
-        ans.push_back(-1);  
-        s.push(arr[n-1]); //4
-        for(int i=n-2;i>=0;i--){
-            if(arr[i]<s.top()){  
-            ans.push_back(s.top());
-            s.push(arr[i]);
-      } else{
-           while(!s.empty() && s.top()<arr[i]){s.pop();
-}
-if(s.empty())ans.push_back(-1);
-else ans.push_back(s.top());
-s.push(arr[i]);
-       
-       
-        }
-    }
-    reverse(ans.begin(),ans.end());
-    return ans;
+      vector<long long>ans;
+      stack<long long>s;
+      ans.push_back(-1);
+      s.push(arr[n-1]);
+      for(int i=n-2;i>=0;i--){
+          if(arr[i]<s.top()){
+              ans.push_back(s.top());
+              s.push(arr[i]);
+          }else{
+              while(!s.empty() and s.top()<arr[i]){
+                  s.pop();
+              }
+              if(s.empty())ans.push_back(-1);
+             else  ans.push_back(s.top());
+              s.push(arr[i]);
+            
+          }
+      }
+      reverse(ans.begin(),ans.end());
+      return ans;
     }
 };
 
