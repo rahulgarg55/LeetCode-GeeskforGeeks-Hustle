@@ -17,11 +17,15 @@ class Solution
         }
         
     }
-    vector<long long>ans={-1,-1};
+    int mx=INT_MIN;
+    int ans=0;
     for(int i=0;i<N;i++){
-        ans=max(ans,{weight[i],i});
+        if(weight[i]>=mx){
+            ans=i;
+            mx=weight[i];
+        }
     }
-    return ans[1];
+    return ans;
   }
 };
 
