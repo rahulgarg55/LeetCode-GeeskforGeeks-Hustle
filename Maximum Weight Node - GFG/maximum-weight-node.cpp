@@ -10,18 +10,18 @@ class Solution
   public:
   int maxWeightCell(int N, vector<int> Edge)
   {
-      // code here
-      vector<long long>weight(N);
-      for(int i=0;i<N;i++){
-          if(Edge[i]!=-1){
-              weight[Edge[i]]+=i;
-          }
-      }
-      vector<long long>ans={-1,-1};
-      for(int i=0;i<N;i++){
-          ans=max(ans,{weight[i],i});
-      }
-      return ans[1];
+    vector<long long>weight(N);
+    for(int i=0;i<N;i++){
+        if(Edge[i]!=-1){
+            weight[Edge[i]]+=i;
+        }
+        
+    }
+    vector<long long>ans={-1,-1};
+    for(int i=0;i<N;i++){
+        ans=max(ans,{weight[i],i});
+    }
+    return ans[1];
   }
 };
 
