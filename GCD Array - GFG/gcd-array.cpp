@@ -46,7 +46,7 @@ class Solution {
            for(int i=1;i<n;i++){
                arr[i]+=arr[i-1];
            }
-           int maxg=1; //bcz 1 is divided by everything
+           int maxg=0; //bcz 1 is divided by everything
            for(int x:divisors){
                int ans=0;
                for(int i=0;i<n;i++){
