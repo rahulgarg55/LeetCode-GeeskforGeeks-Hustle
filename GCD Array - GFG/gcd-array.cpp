@@ -36,7 +36,7 @@ class Solution {
            sum+=arr[i];
        }
            vector<int>divisors;
-           int m=sqrt(sum)+1;
+           int m=sqrt(sum);
            for(int i=1;i<m;i++){
                if(sum%i==0){
                    divisors.push_back(i);
