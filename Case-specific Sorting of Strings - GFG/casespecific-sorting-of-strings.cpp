@@ -25,7 +25,7 @@ class Solution
             sort(lower.begin(),lower.end());
             sort(upper.begin(),upper.end());
             int i=0,j=0,k=0;
-            while(i<lower.size() or j<upper.size() or k<str.size()){
+            while(k<str.size()){
             if(islower(str[k])){
                 ans+=lower[i++];
             }else{
