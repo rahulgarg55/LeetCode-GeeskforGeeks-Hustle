@@ -14,26 +14,27 @@ class Solution
     //Function to perform case-specific sorting of strings.
     string caseSort(string str, int n)
     {
-            string ans;
-            string lower;
-            string upper;
-            for(int i=0;i<n;i++){
-                if(islower(str[i]))
-                lower+=str[i];
-                else upper+=str[i];
-            }
-            sort(lower.begin(),lower.end());
-            sort(upper.begin(),upper.end());
-            int i=0,j=0,k=0;
-            while(k<str.size()){
-            if(islower(str[k])){
-                ans+=lower[i++];
-            }else{
-                ans+=upper[j++];
-            }
-                k++;
-            }
-            return ans;
+         string ans;
+         string upper;
+         string lower;
+         for(int i=0;i<n;i++){
+             if(isupper(str[i]))
+             upper+=str[i];
+             else 
+             lower+=str[i];
+         }
+         sort(lower.begin(),lower.end());
+         sort(upper.begin(),upper.end());
+         int i=0,j=0,k=0;
+         while(k<str.size()){
+             if(islower(str[k])){
+                 ans+=lower[i++];
+             }else{
+                 ans+=upper[j++];
+             }
+             k++;
+         }
+         return ans;
             
     }
 };
