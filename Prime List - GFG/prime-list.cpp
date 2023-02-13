@@ -55,10 +55,7 @@ bool isprime(int n){
             curr=curr->next;
             continue;
             }
-            if(x==2 or x==3){
-                curr=curr->next;
-                continue;
-            }
+         
         while(!isprime(sp)){
             sp--;
         }
