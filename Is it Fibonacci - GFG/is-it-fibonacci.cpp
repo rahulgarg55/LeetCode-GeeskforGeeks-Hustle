@@ -11,18 +11,15 @@ using namespace std;
 class Solution {
   public:
     long long solve(int n, int k, vector<long long> a) {
-        // code here
-        long long sum=0;
-        long long dp[n];
-        for(int i=0;i<k;i++){
-            sum+=a[i];
-            dp[i+1]=a[i];
-        }
-        for(int i=k+1;i<=n;i++){
-            dp[i]=sum;
-            sum+=dp[i]-dp[i-k];
-        }
-        return dp[n];
+      if(n==k)return a[k-1];
+      long long int sum=0;
+      for(auto i:a)sum+=i;
+      for(int i=k;i<n;i++){
+          a.push_back(sum);
+          sum+=sum;
+          sum-=a[i-k];
+      }
+      return a[n-1];
     }
 };
 
