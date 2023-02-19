@@ -101,7 +101,7 @@ bool compare(Node* a, Node* b, vector<pair<int, int>>& mismatch) {
 
 class Solution {
   public:
-  map<int,int>mp;
+  unordered_map<int,int>mp;
   void inorder(vector<int>&res,struct Node *root){
       if(root==NULL)return;
       inorder(res,root->left);
@@ -123,7 +123,7 @@ class Solution {
         int n=res.size();
         for(int i=0;i<n;i++){
             ans.push_back(res[i]);
-        }
+        }       
         sort(ans.begin(),ans.end());
       for(int i=0;i<n;i++)
       mp[res[i]]=ans[i];
