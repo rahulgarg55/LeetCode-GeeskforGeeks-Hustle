@@ -101,34 +101,42 @@ bool compare(Node* a, Node* b, vector<pair<int, int>>& mismatch) {
 
 class Solution {
   public:
- unordered_map<int,int>mp;
   void inorder(vector<int>&res,struct Node* root){
       if(root==NULL)return ;
       inorder(res,root->left);
       res.push_back(root->data);
       inorder(res,root->right);
   }
-  void traverse(struct Node* root){
+  void traverse(struct Node* root,int no1,int no2){
       if(root==NULL)return;
-      root->data=mp[root->data];
-      traverse(root->left);
-      traverse(root->right);
+      if(root->data==no1)
+      root->data=no2;
+      else if(root->data==no2)
+      root->data=no1;
+      traverse(root->left,no1,no2);
+      traverse(root->right,no1,no2);
   }
     struct Node *correctBST(struct Node *root) {
         // code here
-        vector<int>ans;
+        
         vector<int>res;
         inorder(res,root);
         int n=res.size();
-        for(int i=0;i<n;i++){
-            ans.push_back(res[i]);
-    }
-    sort(ans.begin(),ans.end());
-    for(int i=0;i<n;i++){
-        mp[res[i]]=ans[i];
-        
-    }
-    traverse(root);
+        int no1=0,no2=0;
+        for(int i=0;i<n-1;i++){
+            if(res[i]>res[i+1]){
+                no1=res[i];
+                break;
+            }
+        }
+        for(int i=n-1;i>0;i--){
+            if(res[i]<res[i-1]){
+                no2=res[i];
+                break;
+            }
+        }
+    
+    traverse(root,no1,no2);
     return root;
     }
 };
