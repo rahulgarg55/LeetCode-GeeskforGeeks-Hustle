@@ -10,16 +10,16 @@ using namespace std;
 
 long long int no_of_subarrays(int n, vector<int> &arr) {
     // Write your code here.
-    long long int  ans=0;
-    for(long long int i=0;i<n;i++){
-        long long int c=0;
-        while(i<n and arr[i]==0){
-            c++;
-           i++;
-    }
-    ans+=c*(c+1)/2;
-    }
-    return ans;
+  long long int ans=0;
+  for(long long int i=0;i<n;i++){
+      long long int c=0;
+      while(i<n and arr[i]==0){
+          c++;
+          i++;
+      }
+      ans+=c*(c+1)/2 ;  //the part only containing zeroes
+  }
+  return ans;
 }
     
     
