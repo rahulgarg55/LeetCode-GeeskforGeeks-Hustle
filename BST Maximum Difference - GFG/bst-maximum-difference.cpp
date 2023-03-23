@@ -59,8 +59,9 @@ Node* search(Node *root,int target,int &ans){
         // Code here
         int ans=0;
         Node* node=search(root,target,ans);
-          if(node==NULL)return -1;   
+          if(node==NULL)return -1;  
         ans-=dfs(node)-node->data;
+         
             //ans maximum diff
       // ans is max diff bw sum of values from root to target-target to the child leaf node
         return ans;
