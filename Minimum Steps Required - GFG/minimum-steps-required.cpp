@@ -13,10 +13,13 @@ int c=1;
 int n=str.size();
 for(int i=1;i<n;i++){
     if(str[i]!=str[i-1])
-    c++;
-    
+    c++;// bbaaabb
 }
 return (c/2+1);
+
+
+
+
 }
     
     
